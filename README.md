@@ -1,5 +1,5 @@
 # RTS-workoutmaker
-Makes RTS powerlifting programs
+Makes RTS powerlifting programs based on the The Reactive Training Manual By Michael Tuscherer 
 
 WpfApp2\bin\Debug\WpfApp2.exe
 
