@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="RTS generator" Height="450" Width="800"
+        MinHeight="450" MinWidth="800">
+    <Grid Margin="40, 40, 40, 40">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Name="file_name" Margin="0 , -30, 0, 0">new program.rtsg</TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="0" Name="status_text" Margin="0, -30, 0, 0" Grid.ColumnSpan="2" Grid.RowSpan="2"></TextBlock>
+        <ScrollViewer Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Name="block_scroll_view">
+            <TextBox Name="program_text"></TextBox>
+        </ScrollViewer>
+        
+        <Button Grid.Column="0" Grid.Row="0" Click="load_program_click" Margin="10">Load Program</Button>
+        <Button Grid.Column="1" Grid.Row="0" Click="save_program_click" Margin="10">Save Program</Button>
+        <Button Grid.Column="2" Grid.Row="0" Click="add_block_click" Margin="10">Add Block</Button>
+        <Button Grid.Column="3" Grid.Row="0" Click="edit_weekly_template_click" Margin="10">Edit Weekly Template</Button>
+        <Button Grid.Column="4" Grid.Row="0" Click="edit_template_exercises_click" Margin="10">Edit Template Exercises</Button>
+
+        
+    </Grid>
+</Window>
