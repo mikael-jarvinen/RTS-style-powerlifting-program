@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="weekly_template" Height="200" Width="600">
+        Title="weekly_template" Height="350" Width="1000">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -21,13 +21,41 @@
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" Margin="10,5" Click="load_template">Browse</Button>
-        <ToggleButton Grid.Column="0" Grid.Row="1" Margin="3,2" Click="mon_button">monday</ToggleButton>
-        <ToggleButton Grid.Column="1" Grid.Row="1" Margin="3,2" Click="tue_button">tuesday</ToggleButton>
-        <ToggleButton Grid.Column="2" Grid.Row="1" Margin="3,2" Click="wed_button">wednesday</ToggleButton>
-        <ToggleButton Grid.Column="3" Grid.Row="1" Margin="3,2" Click="thu_button">thursday</ToggleButton>
-        <ToggleButton Grid.Column="4" Grid.Row="1" Margin="3,2" Click="fri_button">friday</ToggleButton>
-        <ToggleButton Grid.Column="5" Grid.Row="1" Margin="3,2" Click="sat_button">saturday</ToggleButton>
-        <ToggleButton Grid.Column="6" Grid.Row="1" Margin="3,2" Click="tue_button">sunday</ToggleButton>
+        <Button Name="browse_button" Grid.Column="0" Grid.Row="0" Margin="10,5" Click="load_template">Browse</Button>
+        <Button Name="save_button" Grid.Column="6" Grid.Row="0" Margin="10,5" Click="save_template">Save</Button>
+        <ToggleButton Name="mon_tgl_btn" Grid.Column="0" Grid.Row="1" Margin="3,1" Click="mon_button">monday</ToggleButton>
+        <ToggleButton Name="tue_tgl_btn" Grid.Column="1" Grid.Row="1" Margin="3,1" Click="tue_button">tuesday</ToggleButton>
+        <ToggleButton Name="wed_tgl_btn"  Grid.Column="2" Grid.Row="1" Margin="3,1" Click="wed_button">wednesday</ToggleButton>
+        <ToggleButton Name="thu_tgl_btn" Grid.Column="3" Grid.Row="1" Margin="3,1" Click="thu_button">thursday</ToggleButton>
+        <ToggleButton Name="fri_tgl_btn" Grid.Column="4" Grid.Row="1" Margin="3,1" Click="fri_button">friday</ToggleButton>
+        <ToggleButton Name="sat_tgl_btn" Grid.Column="5" Grid.Row="1" Margin="3,1" Click="sat_button">saturday</ToggleButton>
+        <ToggleButton Name="sun_tgl_btn" Grid.Column="6" Grid.Row="1" Margin="3,1" Click="sun_button">sunday</ToggleButton>
+        <ComboBox Name="exercise_focus_combo"  Grid.Column="1" Grid.Row="0" Margin="3,5" Visibility="Hidden">
+            <ComboBoxItem IsSelected="True">primary</ComboBoxItem>
+            <ComboBoxItem>secondary</ComboBoxItem>
+            <ComboBoxItem>(leave empty)</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="main_exercise_combo" Grid.Column="2" Grid.Row="0" Margin="3,5" Visibility="Hidden">
+            <ComboBoxItem IsSelected="True">squat</ComboBoxItem>
+            <ComboBoxItem>benchpress</ComboBoxItem>
+            <ComboBoxItem>deadlift</ComboBoxItem>
+            <ComboBoxItem>Abs</ComboBoxItem>
+            <ComboBoxItem>Lats</ComboBoxItem>
+            <ComboBoxItem>Triceps</ComboBoxItem>
+            <ComboBoxItem>Grip</ComboBoxItem>
+            <ComboBoxItem>
+                <TextBox Width="150"></TextBox>
+            </ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="exercise_purpose_combo" Grid.Column="3" Grid.Row="0" Margin="3,5" Visibility="Hidden">
+            <ComboBoxItem IsSelected="True">main</ComboBoxItem>
+            <ComboBoxItem>assist</ComboBoxItem>
+            <ComboBoxItem>supplement</ComboBoxItem>
+            <ComboBoxItem>(leave empty)</ComboBoxItem>
+        </ComboBox>
+        <Button Name="add_exercise_button" Grid.Column="4" Grid.Row="0" Margin="3,5" Visibility="Hidden" Click="add_exercise">Add</Button>
+        
+
+        <StackPanel Name="day_view" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="7"></StackPanel>
     </Grid>
 </Window>
