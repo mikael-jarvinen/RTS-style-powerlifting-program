@@ -33,17 +33,18 @@
         <ComboBox Name="exercise_focus_combo"  Grid.Column="1" Grid.Row="0" Margin="3,5" Visibility="Hidden">
             <ComboBoxItem IsSelected="True">primary</ComboBoxItem>
             <ComboBoxItem>secondary</ComboBoxItem>
-            <ComboBoxItem>(leave empty)</ComboBoxItem>
+            <ComboBoxItem Name="focus_empty_item" Selected="CheckExtraConditions" Unselected="CheckExtraConditions">(leave empty)</ComboBoxItem>
         </ComboBox>
         <ComboBox Name="main_exercise_combo" Grid.Column="2" Grid.Row="0" Margin="3,5" Visibility="Hidden">
             <ComboBoxItem IsSelected="True">squat</ComboBoxItem>
-            <ComboBoxItem>benchpress</ComboBoxItem>
+            <ComboBoxItem>bench</ComboBoxItem>
             <ComboBoxItem>deadlift</ComboBoxItem>
-            <ComboBoxItem>Abs</ComboBoxItem>
-            <ComboBoxItem>Lats</ComboBoxItem>
-            <ComboBoxItem>Triceps</ComboBoxItem>
-            <ComboBoxItem>Grip</ComboBoxItem>
-            <ComboBoxItem>
+            <ComboBoxItem IsEnabled="False">below only if focus and purpose are empty</ComboBoxItem>
+            <ComboBoxItem Name="abs_combo" IsEnabled="False">Abs</ComboBoxItem>
+            <ComboBoxItem Name="lats_combo" IsEnabled="False">Lats</ComboBoxItem>
+            <ComboBoxItem Name="triceps_combo" IsEnabled="False">Triceps</ComboBoxItem>
+            <ComboBoxItem Name="grip_combo" IsEnabled="False">Grip</ComboBoxItem>
+            <ComboBoxItem Name="text_combo" IsEnabled="False">
                 <TextBox Width="150"></TextBox>
             </ComboBoxItem>
         </ComboBox>
@@ -51,7 +52,7 @@
             <ComboBoxItem IsSelected="True">main</ComboBoxItem>
             <ComboBoxItem>assist</ComboBoxItem>
             <ComboBoxItem>supplement</ComboBoxItem>
-            <ComboBoxItem>(leave empty)</ComboBoxItem>
+            <ComboBoxItem Name="purpose_empty_item" Selected="CheckExtraConditions" Unselected="CheckExtraConditions">(leave empty)</ComboBoxItem>
         </ComboBox>
         <Button Name="add_exercise_button" Grid.Column="4" Grid.Row="0" Margin="3,5" Visibility="Hidden" Click="add_exercise">Add</Button>
         

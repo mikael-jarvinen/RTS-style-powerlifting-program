@@ -318,7 +318,7 @@ namespace workoutmakerCsharp
             StreamReader sr = new StreamReader(template_path);
             string line = sr.ReadLine();
             List<string> template_exercises = new List<string>();
-            int training_days_count;  Int32.TryParse(line, out training_days_count);
+            int exercise_count;  Int32.TryParse(line, out exercise_count);
             line = sr.ReadLine();
 
             string week_day = "";
@@ -331,7 +331,7 @@ namespace workoutmakerCsharp
                 }
                 else if (line == "X")
                 {
-                    training_days.Add(new TrainingDay(week_day, template_exercises, block_type, fatique/(2*training_days_count), main_workouts));
+                    training_days.Add(new TrainingDay(week_day, template_exercises, block_type, fatique/exercise_count, main_workouts));
                     template_exercises.Clear();
                 }
                 else
@@ -409,10 +409,10 @@ namespace workoutmakerCsharp
                     file = element;
                     goto file_read;
                 }
-                string exercise_target = element.Substring(0, element.IndexOf('_'));
-                string exercise = element.Substring(element.IndexOf('_') + 1);
                 if (element.Contains("bench"))
                 {
+                    string exercise_target = element.Substring(0, element.IndexOf('_'));
+                    string exercise = element.Substring(element.IndexOf('_') + 1);
                     if (exercise_target == "primary")
                     {
                         file = main_workouts.bench_primary + '_' + exercise;
@@ -424,6 +424,8 @@ namespace workoutmakerCsharp
                 }
                 else if (element.Contains("deadlift"))
                 {
+                    string exercise_target = element.Substring(0, element.IndexOf('_'));
+                    string exercise = element.Substring(element.IndexOf('_') + 1);
                     if (exercise_target == "primary")
                     {
                         file = main_workouts.deadlift_primary + '_' + exercise;
@@ -433,16 +435,23 @@ namespace workoutmakerCsharp
                         file = main_workouts.deadlift_secondary + '_' + exercise;
                     }
                 }
-                else
+                else if(element.Contains("squat"))
                 {
+                    string exercise_target = element.Substring(0, element.IndexOf('_'));
+                    string exercise = element.Substring(element.IndexOf('_') + 1);
                     if (exercise_target == "primary")
                     {
-                        file = main_workouts.deadlift_primary + '_' + exercise;
+                        file = main_workouts.squat_primary + '_' + exercise;
                     }
                     else
                     {
-                        file = main_workouts.deadlift_secondary + '_' + exercise;
+                        file = main_workouts.squat_secondary + '_' + exercise;
                     }
+                }
+                else
+                {
+                    this.exercises.Add(new exercise(element));
+                    return;
                 }
 
                 file_read:
@@ -495,6 +504,12 @@ namespace workoutmakerCsharp
         string protocol;
         public static int[] fatiques = { 24, 40, 56, 72 };
 
+        public exercise(string name)
+        {
+            this.name = name;
+            this.protocol = "extra";
+        }
+
         public exercise(string name, int reps, int sets)
         {
             this.name = name;
@@ -533,6 +548,10 @@ namespace workoutmakerCsharp
             else if(this.protocol == "sets")
             {
                 returnable += s + this.sets + "x" + this.reps + "@RPE " + this.RPE;
+                return returnable;
+            }
+            else if (this.protocol == "extra")
+            {
                 return returnable;
             }
             returnable += s + "x" + this.reps + "@RPE " + this.RPE + s + this.fatique + "% " + this.protocol;

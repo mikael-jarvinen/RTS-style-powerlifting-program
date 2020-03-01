@@ -24,15 +24,35 @@ namespace WpfApp2
     {
         string weekly_template_file_path;
         List<List<string>> days;
-        int days_count;
+        int exercise_count;
         List<string> current_day;
         public weekly_template()
         {
             InitializeComponent();
             weekly_template_file_path = "";
             days = new List<List<string>>(); days.Add(new List<string>()); days.Add(new List<string>()); days.Add(new List<string>()); days.Add(new List<string>()); days.Add(new List<string>()); days.Add(new List<string>()); days.Add(new List<string>());
-            days_count = 0;
+            exercise_count = 0;
             current_day = new List<string>();
+        }
+
+        private void CheckExtraConditions(object sender, RoutedEventArgs e)
+        {
+            if (focus_empty_item.IsSelected == true && purpose_empty_item.IsSelected == true)
+            {
+                abs_combo.IsEnabled = true;
+                lats_combo.IsEnabled = true;
+                triceps_combo.IsEnabled = true;
+                grip_combo.IsEnabled = true;
+                text_combo.IsEnabled = true;
+            }
+            else
+            {
+                abs_combo.IsEnabled = false;
+                lats_combo.IsEnabled = false;
+                triceps_combo.IsEnabled = false;
+                grip_combo.IsEnabled = false;
+                text_combo.IsEnabled = false;
+            }
         }
 
         private void add_exercise(object sender, RoutedEventArgs e)
@@ -50,7 +70,8 @@ namespace WpfApp2
             }
             else
             {
-                current_day.Add(focus + exercise + purpose);
+                current_day.Add(focus + '_' + exercise + '_' + purpose);
+                exercise_count++;
             }
             RefreshPanel();
         }
@@ -82,6 +103,10 @@ namespace WpfApp2
                 if (element == exercise)
                 {
                     current_day.Remove(element);
+                    if(exercise.Split('_').Length - 1 == 2)
+                    {
+                        exercise_count--;
+                    }
                     break;
                 }
             }
@@ -115,11 +140,13 @@ namespace WpfApp2
 
             if (openFileDialog.ShowDialog() == openFileDialog.CheckFileExists)
             {
-                if (openFileDialog.FileName != "")
-                {
-                    weekly_template_file_path = openFileDialog.FileName;
-                }
+                weekly_template_file_path = openFileDialog.FileName;
             }
+            else
+            {
+                return;
+            }
+
             StreamReader sr = new StreamReader(weekly_template_file_path);
             string line = sr.ReadLine();
             List<List<string>> days = new List<List<string>>();days.Add(new List<string>());days.Add(new List<string>());days.Add(new List<string>());days.Add(new List<string>());days.Add(new List<string>());days.Add(new List<string>());days.Add(new List<string>());
@@ -137,7 +164,7 @@ namespace WpfApp2
                 }
                 else if (Int32.TryParse(line, out s))
                 {
-                    this.days_count = s;
+                    this.exercise_count = s;
                 }
                 else
                 {
@@ -203,7 +230,7 @@ namespace WpfApp2
             FileStream new_file = File.Create(file_path);
             new_file.Close();
             StreamWriter file_writer = new StreamWriter(file_path);
-            file_writer.WriteLine(this.days_count.ToString());
+            file_writer.WriteLine(this.exercise_count.ToString());
 
             int WeekDay = 0;
             foreach(List<string> day in this.days)
