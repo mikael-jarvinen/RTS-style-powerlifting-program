@@ -31,29 +31,21 @@ namespace WpfApp2
             weekly_template_file_path = "1_weekly_template.TEMPLATE";
         }
 
-        public void SetProgram(WorkoutMaker program)
+        public void AddBlockDone(object sender, RoutedEventArgs e)
         {
-            this.program = program;
-        }
-
-        void add_block_Closing(object sender, CancelEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show("Are the block parameters ok?", "Block parameters", MessageBoxButton.YesNoCancel);
-            if ( result == MessageBoxResult.No)
-            {
-                e.Cancel = true;
-                return;
-            }
-            else if (result == MessageBoxResult.Cancel)
-            {
-                return;
-            }
+            MessageBoxResult result = MessageBox.Show("Are the block parameters ok?", "Block parameters", MessageBoxButton.YesNo);
 
             string block_type = training_block_box.Text;
             int week_count;
             Int32.TryParse(training_weeks_count.Text, out week_count);
             MainWorkouts main_workouts = new MainWorkouts(benchpress_main_focus.Text, deadlift_main_focus.Text, squat_main_focus.Text);
             this.program.AddTrainingBlock(new TrainingBlock(block_type, week_count, this.weekly_template_file_path, main_workouts));
+            this.Close();
+        }
+
+        public void SetProgram(WorkoutMaker program)
+        {
+            this.program = program;
         }
 
         private void weekly_template_browse(object sender, RoutedEventArgs e)

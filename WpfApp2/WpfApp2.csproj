@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="edit_exercises.xaml.cs">
+      <DependentUpon>edit_exercises.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExerciseEdit.xaml.cs">
+      <DependentUpon>ExerciseEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="variables_window.xaml.cs">
       <DependentUpon>variables_window.xaml</DependentUpon>
     </Compile>
@@ -62,6 +68,14 @@
       <DependentUpon>weekly_template.xaml</DependentUpon>
     </Compile>
     <Compile Include="workoutmaker.cs" />
+    <Page Include="edit_exercises.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExerciseEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

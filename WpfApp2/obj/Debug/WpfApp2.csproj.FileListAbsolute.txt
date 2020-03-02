@@ -16,3 +16,7 @@ C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\variables_window.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\variables_window.baml
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\weekly_template.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\weekly_template.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\edit_exercises.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\edit_exercises.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\ExerciseEdit.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\ExerciseEdit.baml

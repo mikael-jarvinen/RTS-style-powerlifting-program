@@ -126,7 +126,9 @@ namespace WpfApp2
         }
         private void edit_template_exercises_click(object sender, RoutedEventArgs e)
         {
-            
+            edit_exercises window = new edit_exercises();
+            window.Show();
+
         }
     }
 }

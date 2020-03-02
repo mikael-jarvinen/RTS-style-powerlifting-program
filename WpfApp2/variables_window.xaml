@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="Add Block" Height="350" Width="300" ResizeMode="NoResize"
-        Name="add_block"
-        Closing="add_block_Closing">
+        Name="add_block">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -57,6 +56,7 @@
             <ComboBoxItem>Top</ComboBoxItem>
         </ComboBox>
         <Button Grid.Column="1" Grid.Row="5" Name="weekly_template_button" HorizontalAlignment="Left" Margin="10, 10" Click="weekly_template_browse">Browse</Button>
+        <Button Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" Height="34" Width="45" Margin="10, 10" Click="AddBlockDone">Done</Button>
         
     </Grid>
 </Window>
