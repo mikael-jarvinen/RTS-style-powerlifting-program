@@ -71,11 +71,12 @@ namespace WpfApp2
 
             if (openFileDialog.ShowDialog() == openFileDialog.CheckFileExists)
             {
-                if (openFileDialog.FileName != "")
-                {
-                    file_name.Text = openFileDialog.SafeFileName;
-                    current_file_path = openFileDialog.FileName;
-                }
+                file_name.Text = openFileDialog.SafeFileName;
+                current_file_path = openFileDialog.FileName;
+            }
+            else
+            {
+                return;
             }
             main_program.readFromFile(openFileDialog.FileName);
 
@@ -116,6 +117,10 @@ namespace WpfApp2
             {
                 file_name.Text = saveFileDialog.SafeFileName;
                 current_file_path = saveFileDialog.FileName;
+            }
+            else
+            {
+                return;
             }
             main_program.writeToFile(saveFileDialog.FileName);
         }
