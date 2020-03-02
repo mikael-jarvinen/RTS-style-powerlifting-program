@@ -298,6 +298,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = false;
                 browse_button.IsEnabled = false;
                 save_button.IsEnabled = false;
+                info_text.Visibility = Visibility.Hidden;
                 current_day = this.days[0];
                 EnableAddExerciseView();
                 RefreshPanel();
@@ -312,6 +313,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = true;
                 browse_button.IsEnabled = true;
                 save_button.IsEnabled = true;
+                info_text.Visibility = Visibility.Visible;
                 current_day = new List<string>();
                 DisableAddExerciseView();
                 RefreshPanel();
@@ -331,6 +333,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = false;
                 browse_button.IsEnabled = false;
                 save_button.IsEnabled = false;
+                info_text.Visibility = Visibility.Hidden;
                 current_day = this.days[1];
                 EnableAddExerciseView();
                 RefreshPanel();
@@ -345,6 +348,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = true;
                 browse_button.IsEnabled = true;
                 save_button.IsEnabled = true;
+                info_text.Visibility = Visibility.Visible;
                 current_day = new List<string>();
                 DisableAddExerciseView();
                 RefreshPanel();
@@ -364,6 +368,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = false;
                 browse_button.IsEnabled = false;
                 save_button.IsEnabled = false;
+                info_text.Visibility = Visibility.Hidden;
                 current_day = this.days[2];
                 EnableAddExerciseView();
                 RefreshPanel();
@@ -378,6 +383,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = true;
                 browse_button.IsEnabled = true;
                 save_button.IsEnabled = true;
+                info_text.Visibility = Visibility.Visible;
                 current_day = new List<string>();
                 DisableAddExerciseView();
                 RefreshPanel();
@@ -397,6 +403,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = false;
                 browse_button.IsEnabled = false;
                 save_button.IsEnabled = false;
+                info_text.Visibility = Visibility.Hidden;
                 current_day = this.days[3];
                 EnableAddExerciseView();
                 RefreshPanel();
@@ -411,6 +418,7 @@ namespace WpfApp2
                 sun_tgl_btn.IsEnabled = true;
                 browse_button.IsEnabled = true;
                 save_button.IsEnabled = true;
+                info_text.Visibility = Visibility.Visible;
                 current_day = new List<string>();
                 DisableAddExerciseView();
                 RefreshPanel();
@@ -431,6 +439,7 @@ namespace WpfApp2
                 browse_button.IsEnabled = false;
                 save_button.IsEnabled = false;
                 current_day = this.days[4];
+                info_text.Visibility = Visibility.Hidden;
                 EnableAddExerciseView();
                 RefreshPanel();
             }
@@ -445,6 +454,7 @@ namespace WpfApp2
                 browse_button.IsEnabled = true;
                 save_button.IsEnabled = true;
                 current_day = new List<string>();
+                info_text.Visibility = Visibility.Visible;
                 DisableAddExerciseView();
                 RefreshPanel();
             }
@@ -464,6 +474,7 @@ namespace WpfApp2
                 browse_button.IsEnabled = false;
                 save_button.IsEnabled = false;
                 current_day = this.days[5];
+                info_text.Visibility = Visibility.Hidden;
                 EnableAddExerciseView();
                 RefreshPanel();
             }
@@ -478,6 +489,7 @@ namespace WpfApp2
                 browse_button.IsEnabled = true;
                 save_button.IsEnabled = true;
                 current_day = new List<string>();
+                info_text.Visibility = Visibility.Visible;
                 DisableAddExerciseView();
                 RefreshPanel();
             }
@@ -496,6 +508,7 @@ namespace WpfApp2
                 sat_tgl_btn.IsEnabled = false;
                 browse_button.IsEnabled = false;
                 save_button.IsEnabled = false;
+                info_text.Visibility = Visibility.Hidden;
                 current_day = this.days[6];
                 EnableAddExerciseView();
                 RefreshPanel();
@@ -510,6 +523,7 @@ namespace WpfApp2
                 sat_tgl_btn.IsEnabled = true;
                 browse_button.IsEnabled = true;
                 save_button.IsEnabled = true;
+                info_text.Visibility = Visibility.Visible;
                 current_day = new List<string>();
                 DisableAddExerciseView();
                 RefreshPanel();

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="weekly_template" Height="350" Width="1000">
+        Title="weekly_template" Height="350" Width="1000"
+        ResizeMode="NoResize">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -55,8 +56,7 @@
             <ComboBoxItem Name="purpose_empty_item" Selected="CheckExtraConditions" Unselected="CheckExtraConditions">(leave empty)</ComboBoxItem>
         </ComboBox>
         <Button Name="add_exercise_button" Grid.Column="4" Grid.Row="0" Margin="3,5" Visibility="Hidden" Click="add_exercise">Add</Button>
-        
-
         <StackPanel Name="day_view" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="7"></StackPanel>
+        <TextBlock Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Name="info_text" Grid.ColumnSpan="3" FontSize="20">Press on a day to begin modifying template</TextBlock>
     </Grid>
 </Window>
