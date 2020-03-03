@@ -496,18 +496,22 @@ namespace workoutmakerCsharp
 
     public class exercise
     {
-        int fatique;
-        double RPE;
-        int reps;
-        int sets;
-        string name;
-        string protocol;
+        public int fatique;
+        public double RPE;
+        public int reps;
+        public int sets;
+        public string name;
+        public string protocol;
         public static int[] fatiques = { 24, 40, 56, 72 };
 
         public exercise(string name)
         {
             this.name = name;
             this.protocol = "extra";
+            this.fatique = 0;
+            this.RPE = 0;
+            this.reps = 0;
+            this.sets = 0;
         }
 
         public exercise(string name, int reps, int sets)
@@ -516,6 +520,8 @@ namespace workoutmakerCsharp
             this.reps = reps;
             this.sets = sets;
             this.protocol = "blank";
+            this.fatique = 0;
+            this.RPE = 0;
         }
 
         public exercise(string name, int reps, int fatique, double RPE, string protocol)
@@ -525,6 +531,7 @@ namespace workoutmakerCsharp
             this.fatique = fatique;
             this.RPE = RPE;
             this.protocol = protocol;
+            this.sets = 0;
         }
 
         public exercise(string name, int reps, int sets, double RPE)
@@ -534,6 +541,7 @@ namespace workoutmakerCsharp
             this.sets = sets;
             this.RPE = RPE;
             this.protocol = "sets";
+            this.fatique = 0;
         }
 
         public string exerciseString()

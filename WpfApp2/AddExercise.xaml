@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfApp2.AddExercise"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="AddExercise" Height="100" Width="650" MinWidth="600"
+        Closing="CloseWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="name_box" Height="20" Grid.Column="0" Grid.Row="0" Margin="5" IsEnabled="False"></TextBox>
+        <ComboBox Name="sets_combo" Grid.Column="1" Grid.Row="0" Height="20" Width="40" IsEnabled="False" SelectedValuePath="Content">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem>6</ComboBoxItem>
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>9</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="reps_box" Grid.Column="2" Grid.Row="0" Height="20" Width="20" IsEnabled="False"></TextBox>
+        <ComboBox Name="RPE_combo" Grid.Column="3" Grid.Row="0" Height="20" Width="40" IsEnabled="False" SelectedValuePath="Content">
+            <ComboBoxItem>6</ComboBoxItem>
+            <ComboBoxItem>6,5</ComboBoxItem>
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>7,5</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>8,5</ComboBoxItem>
+            <ComboBoxItem>9</ComboBoxItem>
+            <ComboBoxItem>9,5</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="fatique_combo" Grid.Column="4" Grid.Row="0" Height="20" Width="40" IsEnabled="False" SelectedValuePath="Content">
+            <ComboBoxItem>3%</ComboBoxItem>
+            <ComboBoxItem>5%</ComboBoxItem>
+            <ComboBoxItem>7%</ComboBoxItem>
+            <ComboBoxItem>9%</ComboBoxItem>
+            <ComboBoxItem>12%</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="fatique_protocol_combo" Grid.Column="5" Grid.Row="0" Height="20" Width="40" IsEnabled="False" SelectedValuePath="Content">
+            <ComboBoxItem>load drop(ld)</ComboBoxItem>
+            <ComboBoxItem>load drop gradually(ldg)</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="protocol_combo" Grid.Column="6" Grid.Row="0" Height="20" Width="40" SelectionChanged="protocol_change" SelectedValuePath="Content">
+            <ComboBoxItem>fatique</ComboBoxItem>
+            <ComboBoxItem>basic, RPE</ComboBoxItem>
+            <ComboBoxItem>extra</ComboBoxItem>
+            <ComboBoxItem>basic</ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>

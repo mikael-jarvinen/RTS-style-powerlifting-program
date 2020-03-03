@@ -34,25 +34,85 @@ namespace WpfApp2
 
         public void UpdateProgramView()
         {
-            string new_text = "";
+            block_scroll_view.Children.Clear();
+
             foreach (TrainingBlock block in main_program.GetTrainingBlocks())
             {
-                new_text = new_text + block.GetBlockType() + " block" + '\n';
-                int x = 1;
+                TextBlock block_type = new TextBlock();
+                block_type.FontSize = 20;
+                block_type.Text = block.GetBlockType();
+                StackPanel text_and_block = new StackPanel();
+                text_and_block.Children.Add(block_type);
+                block_scroll_view.Children.Add(text_and_block);
+
+                int week_count = 1;
                 foreach (TrainingWeek week in block.GetTrainingWeeks())
                 {
-                    new_text = new_text + "Week " + x + '\n'; x++;
+                    TextBlock week_number = new TextBlock();
+                    week_number.Text = "Week " + week_count;
+                    week_number.FontSize = 16;
+                    WrapPanel days_panel = new WrapPanel();
+                    text_and_block.Children.Add(week_number);
+                    text_and_block.Children.Add(days_panel);
                     foreach (TrainingDay day in week.GetTrainingDays())
                     {
-                        new_text = new_text + day.GetWeekDay() + '\n';
-                        foreach (exercise exercise in day.GetExercises())
+                        StackPanel exercises_panel = new StackPanel(); exercises_panel.Margin = new Thickness(10.0);
+                        TextBlock WeekDay = new TextBlock();
+                        WeekDay.Text = day.GetWeekDay();
+                        WeekDay.FontSize = 14;
+                        exercises_panel.Children.Add(WeekDay);
+                        days_panel.Children.Add(exercises_panel);
+
+                        foreach(exercise exercise in day.GetExercises())
                         {
-                            new_text = new_text + exercise.exerciseString() + '\n';
+                            WrapPanel exercise_panel = new WrapPanel(); exercise_panel.Width = 300; exercise_panel.Tag = day.GetExercises();
+                            Button edit_button = new Button();
+                            edit_button.Tag = exercise;
+                            edit_button.Width = 15;
+                            edit_button.Height = 15;
+                            edit_button.Click += edit_exercise_click;
+                            TextBlock exercise_text = new TextBlock();
+                            exercise_text.Text = exercise.exerciseString();
+
+                            exercise_panel.Children.Add(edit_button);
+                            exercise_panel.Children.Add(exercise_text);
+                            
+                            exercises_panel.Children.Add(exercise_panel);
                         }
+                        Button add_exercise = new Button();
+                        add_exercise.Tag = day.GetExercises();
+                        add_exercise.Width = 30;
+                        add_exercise.Height = 20;
+                        add_exercise.Content = "add";
+                        add_exercise.HorizontalAlignment = HorizontalAlignment.Left;
+                        add_exercise.Click += add_exercise_click;
+                        exercises_panel.Children.Add(add_exercise);
                     }
+                    week_count++;
                 }
             }
-            program_text.Text = new_text;
+        }
+
+        private void add_exercise_click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            AddExercise window = new AddExercise((List<exercise>)button.Tag);
+            window.ShowDialog();
+
+            UpdateProgramView();
+        }
+
+        private void edit_exercise_click(object sender, RoutedEventArgs e)
+        {
+            Button edit_button = (Button)sender;
+            WrapPanel parent = (WrapPanel)edit_button.Parent;
+
+            EditExercise window = new EditExercise((exercise)edit_button.Tag, (List<exercise>)parent.Tag);
+            window.ShowDialog();
+
+            
+
+            UpdateProgramView();
         }
 
         private void add_block_click(object sender, RoutedEventArgs e)
@@ -79,26 +139,7 @@ namespace WpfApp2
                 return;
             }
             main_program.readFromFile(openFileDialog.FileName);
-
-            string new_text = "";
-            foreach (TrainingBlock block in main_program.GetTrainingBlocks())
-            {
-                new_text = new_text + block.GetBlockType() + " block" + '\n';
-                int x = 1;
-                foreach (TrainingWeek week in block.GetTrainingWeeks())
-                {
-                    new_text = new_text + "Week " + x + '\n'; x++;
-                    foreach (TrainingDay day in week.GetTrainingDays())
-                    {
-                        new_text = new_text + day.GetWeekDay() + '\n';
-                        foreach (exercise exercise in day.GetExercises())
-                        {
-                            new_text = new_text + exercise.exerciseString() + '\n';
-                        }
-                    }
-                }
-            }
-            program_text.Text = new_text;
+            UpdateProgramView();
         }
         private void save_program_click(object sender, RoutedEventArgs e)
         {

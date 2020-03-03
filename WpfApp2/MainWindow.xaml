@@ -21,8 +21,8 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Name="file_name" Margin="0 , -30, 0, 0">new program.rtsg</TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="0" Name="status_text" Margin="0, -30, 0, 0" Grid.ColumnSpan="2" Grid.RowSpan="2"></TextBlock>
-        <ScrollViewer Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Name="block_scroll_view">
-            <TextBox Name="program_text"></TextBox>
+        <ScrollViewer Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5">
+            <StackPanel Name="block_scroll_view" HorizontalAlignment="Left"></StackPanel>
         </ScrollViewer>
         
         <Button Grid.Column="0" Grid.Row="0" Click="load_program_click" Margin="10">Load Program</Button>
@@ -30,7 +30,5 @@
         <Button Grid.Column="2" Grid.Row="0" Click="add_block_click" Margin="10">Add Block</Button>
         <Button Grid.Column="3" Grid.Row="0" Click="edit_weekly_template_click" Margin="10">Edit Weekly Template</Button>
         <Button Grid.Column="4" Grid.Row="0" Click="edit_template_exercises_click" Margin="10">Edit Template Exercises</Button>
-
-        
     </Grid>
 </Window>

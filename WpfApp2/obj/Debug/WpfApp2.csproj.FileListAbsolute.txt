@@ -20,3 +20,7 @@ C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\edit_exercises.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\edit_exercises.baml
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\ExerciseEdit.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\ExerciseEdit.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\EditExercise.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\EditExercise.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\AddExercise.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\AddExercise.baml

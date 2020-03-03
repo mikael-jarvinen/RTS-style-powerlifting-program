@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddExercise.xaml.cs">
+      <DependentUpon>AddExercise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditExercise.xaml.cs">
+      <DependentUpon>EditExercise.xaml</DependentUpon>
+    </Compile>
     <Compile Include="edit_exercises.xaml.cs">
       <DependentUpon>edit_exercises.xaml</DependentUpon>
     </Compile>
@@ -68,6 +74,14 @@
       <DependentUpon>weekly_template.xaml</DependentUpon>
     </Compile>
     <Compile Include="workoutmaker.cs" />
+    <Page Include="AddExercise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditExercise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="edit_exercises.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
