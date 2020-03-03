@@ -24,3 +24,7 @@ C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\EditExercise.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\EditExercise.baml
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\AddExercise.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\AddExercise.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\GearButton.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\GearButton.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\XButton.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\XButton.baml

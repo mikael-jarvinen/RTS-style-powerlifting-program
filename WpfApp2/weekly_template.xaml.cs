@@ -95,7 +95,8 @@ namespace WpfApp2
         private void RemoveEvent(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            WrapPanel panel = (WrapPanel)button.Parent;
+            XButton x = (XButton)button.Parent;
+            WrapPanel panel = (WrapPanel)x.Parent;
             TextBlock text = (TextBlock)panel.Children[1];
             string exercise = text.Text;
             foreach(string element in current_day)
@@ -119,8 +120,8 @@ namespace WpfApp2
             day_view.Children.Clear();
             foreach(string exercise in current_day)
             {
-                Button remove = new Button();
-                remove.Width=20; remove.Height=15; remove.Click += RemoveEvent;
+                XButton remove = new XButton();
+                remove.btn.Click += RemoveEvent;
                 TextBlock text = new TextBlock();
                 text.Text = exercise;
                 WrapPanel panel = new WrapPanel();

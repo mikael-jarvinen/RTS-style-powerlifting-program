@@ -35,6 +35,8 @@ namespace WpfApp2
         public void UpdateProgramView()
         {
             block_scroll_view.Children.Clear();
+            Image gear = new Image();
+            gear.Source= new BitmapImage(new Uri("C:\\Users\\mikko\\source\\repos\\WpfApp2\\WpfApp2\\gear.png"));
 
             foreach (TrainingBlock block in main_program.GetTrainingBlocks())
             {
@@ -65,12 +67,14 @@ namespace WpfApp2
 
                         foreach(exercise exercise in day.GetExercises())
                         {
-                            WrapPanel exercise_panel = new WrapPanel(); exercise_panel.Width = 300; exercise_panel.Tag = day.GetExercises();
-                            Button edit_button = new Button();
-                            edit_button.Tag = exercise;
-                            edit_button.Width = 15;
-                            edit_button.Height = 15;
-                            edit_button.Click += edit_exercise_click;
+                            WrapPanel exercise_panel = new WrapPanel(); exercise_panel.Width = 300;
+                            GearButton edit_button = new GearButton();
+                            edit_button.Tag = day.GetExercises();
+                            edit_button.btn.Tag = exercise;
+                            edit_button.btn.Width = 15;
+                            edit_button.btn.Height = 15;
+                            edit_button.btn.Click += edit_exercise_click;
+
                             TextBlock exercise_text = new TextBlock();
                             exercise_text.Text = exercise.exerciseString();
 
@@ -105,7 +109,7 @@ namespace WpfApp2
         private void edit_exercise_click(object sender, RoutedEventArgs e)
         {
             Button edit_button = (Button)sender;
-            WrapPanel parent = (WrapPanel)edit_button.Parent;
+            GearButton parent = (GearButton)edit_button.Parent;
 
             EditExercise window = new EditExercise((exercise)edit_button.Tag, (List<exercise>)parent.Tag);
             window.ShowDialog();

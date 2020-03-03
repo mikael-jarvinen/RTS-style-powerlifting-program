@@ -35,10 +35,10 @@ namespace WpfApp2
             {
                 exercises.Add(line);
                 WrapPanel new_panel = new WrapPanel();
-                Button remove = new Button();
-                remove.Width = 20;
-                remove.Height = 20;
-                remove.Click += remove_click;
+                XButton remove = new XButton();
+                remove.Width = 20; remove.btn.Width = 20;
+                remove.Height = 20; remove.btn.Height = 20;
+                remove.btn.Click += remove_click;
                 TextBlock text = new TextBlock();
                 text.Text = line;
                 new_panel.Children.Add(remove);
@@ -53,7 +53,8 @@ namespace WpfApp2
         private void remove_click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            WrapPanel parent = (WrapPanel)button.Parent;
+            XButton x = (XButton)button.Parent;
+            WrapPanel parent = (WrapPanel)x.Parent;
             TextBlock text = (TextBlock)parent.Children[1];
             string exercise = text.Text;
             StackPanel elder = (StackPanel)parent.Parent;
@@ -78,10 +79,10 @@ namespace WpfApp2
             this.exercises.Add(exercise_box.Text);
 
             WrapPanel new_panel = new WrapPanel();
-            Button remove = new Button();
-            remove.Width = 20;
-            remove.Height = 20;
-            remove.Click += remove_click;
+            XButton remove = new XButton();
+            remove.Width = 20; remove.btn.Width = 20;
+            remove.Height = 20;remove.btn.Height = 20;
+            remove.btn.Click += remove_click;
             TextBlock text = new TextBlock();
             text.Text = exercise_box.Text;
             new_panel.Children.Add(remove);
