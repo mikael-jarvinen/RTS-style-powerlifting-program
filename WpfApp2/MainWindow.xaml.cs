@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using workoutmakerCsharp;
 using Microsoft.Win32;
+using OfficeOpenXml;
+using System.IO;
 
 namespace WpfApp2
 {
@@ -155,7 +157,7 @@ namespace WpfApp2
             status_text.Text = "";
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save RTS program";
-            saveFileDialog.Filter = "RTS generator files (*.rtsg)|*.rtsg";
+            saveFileDialog.Filter = "RTS generator files (*.rtsg)|*.rtsg|Excel files(*.xlsx)|*.xlsx";
             saveFileDialog.RestoreDirectory = true;
 
             if(saveFileDialog.ShowDialog() == saveFileDialog.CheckPathExists)
@@ -167,6 +169,63 @@ namespace WpfApp2
             {
                 return;
             }
+
+            if (saveFileDialog.SafeFileName.Substring(saveFileDialog.SafeFileName.LastIndexOf('.'))==".xlsx")
+            {
+                File.Delete(saveFileDialog.FileName);
+
+                ExcelPackage excel = new ExcelPackage();
+                ExcelWorksheet sheet = excel.Workbook.Worksheets.Add("RTS program");
+                sheet.Column(1).Width = 40; sheet.Column(3).Width = 40; sheet.Column(5).Width = 40;sheet.Column(7).Width = 40;sheet.Column(9).Width = 40; sheet.Column(11).Width = 40; sheet.Column(13).Width = 40;
+
+                List<char> column = new List<char>(); column.Add(' '); column.Add('A');column.Add('B');column.Add('C'); column.Add('D');column.Add('E');column.Add('F');column.Add('G');column.Add('H');column.Add('I'); column.Add('J'); column.Add('K'); column.Add('L'); column.Add('M'); column.Add('N'); column.Add('O'); column.Add('P'); column.Add('Q'); column.Add('R'); column.Add('S'); column.Add('T'); column.Add('U'); column.Add('V'); column.Add('W'); column.Add('X');
+                ExcelRange cells = sheet.Cells;
+
+                int x = 1;
+                int y = 1;
+                int week_count = 1;
+                foreach(TrainingBlock block in main_program.GetTrainingBlocks())
+                {
+                    cells[column[x] + y.ToString()].Value = block.GetBlockType();
+                    y++;
+
+                    foreach(TrainingWeek week in block.GetTrainingWeeks())
+                    {
+                        cells[column[x] + y.ToString()].Value = "Week " + week_count; week_count++;
+                        y++;
+
+                        int week_height = 0;
+                        foreach(TrainingDay day in week.GetTrainingDays())
+                        {
+                            cells[column[x] + y.ToString()].Value = day.GetWeekDay();
+
+                            int y1 = y + 1;
+                            foreach(exercise exercise in day.GetExercises())
+                            {
+                                cells[column[x] + y1.ToString()].Value = exercise.exerciseString();
+                                y1++;
+
+                                if (day.GetExercises().Count > week_height)
+                                {
+                                    week_height = day.GetExercises().Count;
+                                }
+                            }
+
+                            x = x + 2;
+                        }
+                        y = y + week_height + 3;
+                        x = 1;
+                    }
+                    y = y + 2;
+                }
+
+                FileInfo excelFile = new FileInfo(saveFileDialog.FileName);
+                excel.SaveAs(excelFile);
+                excel.Dispose();
+
+                return;
+            }
+
             main_program.writeToFile(saveFileDialog.FileName);
         }
         private void edit_weekly_template_click(object sender, RoutedEventArgs e)

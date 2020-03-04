@@ -28,3 +28,6 @@ C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\GearButton.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\GearButton.baml
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\XButton.g.cs
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\XButton.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\bin\Debug\EPPlus.dll
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\bin\Debug\EPPlus.xml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Debug\WpfApp2.csproj.CopyComplete

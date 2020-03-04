@@ -403,10 +403,10 @@ namespace workoutmakerCsharp
 
             foreach (string element in template_exercises)
             {
-                string file = "";
+                string file = "templates\\";
                 if(element.Split('_').Length - 1 == 1)
                 {
-                    file = element;
+                    file += element;
                     goto file_read;
                 }
                 if (element.Contains("bench"))
@@ -415,11 +415,11 @@ namespace workoutmakerCsharp
                     string exercise = element.Substring(element.IndexOf('_') + 1);
                     if (exercise_target == "primary")
                     {
-                        file = main_workouts.bench_primary + '_' + exercise;
+                        file += main_workouts.bench_primary + '_' + exercise;
                     }
                     else
                     {
-                        file = main_workouts.bench_secondary + '_' + exercise;
+                        file += main_workouts.bench_secondary + '_' + exercise;
                     }
                 }
                 else if (element.Contains("deadlift"))
@@ -428,11 +428,11 @@ namespace workoutmakerCsharp
                     string exercise = element.Substring(element.IndexOf('_') + 1);
                     if (exercise_target == "primary")
                     {
-                        file = main_workouts.deadlift_primary + '_' + exercise;
+                        file += main_workouts.deadlift_primary + '_' + exercise;
                     }
                     else
                     {
-                        file = main_workouts.deadlift_secondary + '_' + exercise;
+                        file += main_workouts.deadlift_secondary + '_' + exercise;
                     }
                 }
                 else if(element.Contains("squat"))
@@ -441,11 +441,11 @@ namespace workoutmakerCsharp
                     string exercise = element.Substring(element.IndexOf('_') + 1);
                     if (exercise_target == "primary")
                     {
-                        file = main_workouts.squat_primary + '_' + exercise;
+                        file += main_workouts.squat_primary + '_' + exercise;
                     }
                     else
                     {
-                        file = main_workouts.squat_secondary + '_' + exercise;
+                        file += main_workouts.squat_secondary + '_' + exercise;
                     }
                 }
                 else

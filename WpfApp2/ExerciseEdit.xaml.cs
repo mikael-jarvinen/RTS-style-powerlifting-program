@@ -25,7 +25,7 @@ namespace WpfApp2
         public ExerciseEdit(string path)
         {
             InitializeComponent();
-            this.path = path + ".WORKOUT";
+            this.path = "templates\\" + path + ".WORKOUT";
             exercises = new List<string>();
 
             StreamReader sr = new StreamReader(this.path);
