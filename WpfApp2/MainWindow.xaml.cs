@@ -48,10 +48,6 @@ namespace WpfApp2
 
         public void UpdateProgramView()
         {
-            block_scroll_view.Children.Clear();
-            Image gear = new Image();
-            gear.Source= new BitmapImage(new Uri("C:\\Users\\mikko\\source\\repos\\WpfApp2\\WpfApp2\\gear.png"));
-
             foreach (TrainingBlock block in main_program.GetTrainingBlocks())
             {
                 TextBlock block_type = new TextBlock();

@@ -181,10 +181,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="gear.png" />
+    <EmbeddedResource Include="gear.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="X.png" />
+    <EmbeddedResource Include="X.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
