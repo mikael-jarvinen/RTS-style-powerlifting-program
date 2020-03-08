@@ -28,7 +28,7 @@ namespace WpfApp2
         {
             InitializeComponent();
             program = new WorkoutMaker();
-            weekly_template_file_path = "1_weekly_template.TEMPLATE";
+            weekly_template_file_path = "templates//1_weekly_template.TEMPLATE";
         }
 
         public void AddBlockDone(object sender, RoutedEventArgs e)

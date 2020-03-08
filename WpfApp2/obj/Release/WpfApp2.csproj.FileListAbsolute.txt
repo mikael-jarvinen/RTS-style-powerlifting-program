@@ -29,3 +29,5 @@ C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\WpfApp2.Properties.Resou
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\WpfApp2.csproj.GenerateResource.cache
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\WpfApp2.csproj.CopyComplete
 C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\WpfApp2.exe
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\AddWeek.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\AddWeek.baml

@@ -79,6 +79,9 @@
     <Compile Include="AddExercise.xaml.cs">
       <DependentUpon>AddExercise.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddWeek.xaml.cs">
+      <DependentUpon>AddWeek.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditExercise.xaml.cs">
       <DependentUpon>EditExercise.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <DependentUpon>XButton.xaml</DependentUpon>
     </Compile>
     <Page Include="AddExercise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddWeek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

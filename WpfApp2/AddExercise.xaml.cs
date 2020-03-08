@@ -29,77 +29,84 @@ namespace WpfApp2
 
         private void CloseWindow(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            exercise exercise = new exercise(name_box.Text);
-            exercises.Add(exercise);
-            string protocol = ((ComboBoxItem)protocol_combo.SelectedItem).Content.ToString();
-            exercise.name = name_box.Text;
-            if (protocol == "fatique")
+            try
             {
-                string fatique_protocol = ((ComboBoxItem)fatique_protocol_combo.SelectedItem).Content.ToString();
-                if (fatique_protocol == "load drop(ld)")
+                exercise exercise = new exercise(name_box.Text);
+                exercises.Add(exercise);
+                string protocol = ((ComboBoxItem)protocol_combo.SelectedItem).Content.ToString();
+                exercise.name = name_box.Text;
+                if (protocol == "fatique")
                 {
-                    exercise.protocol = "ld";
+                    string fatique_protocol = ((ComboBoxItem)fatique_protocol_combo.SelectedItem).Content.ToString();
+                    if (fatique_protocol == "load drop(ld)")
+                    {
+                        exercise.protocol = "ld";
+                    }
+                    else
+                    {
+                        exercise.protocol = "ldg";
+                    }
+
+                    int reps;
+                    if (!Int32.TryParse(reps_box.Text, out reps))
+                    {
+                        return;
+                    }
+                    exercise.reps = reps;
+
+                    double RPE;
+                    Double.TryParse(((ComboBoxItem)RPE_combo.SelectedItem).Content.ToString(), out RPE);
+                    exercise.RPE = RPE;
+
+                    int fatique;
+                    Int32.TryParse(((ComboBoxItem)fatique_combo.SelectedItem).Content.ToString().Substring(0, 1), out fatique);
+                    exercise.fatique = fatique;
+                }
+                else if (protocol == "basic, RPE")
+                {
+                    exercise.protocol = "sets";
+
+                    int sets;
+                    Int32.TryParse(((ComboBoxItem)sets_combo.SelectedItem).Content.ToString(), out sets);
+                    exercise.sets = sets;
+
+                    int reps;
+                    if (!Int32.TryParse(reps_box.Text, out reps))
+                    {
+                        return;
+                    }
+                    exercise.reps = reps;
+
+                    double RPE;
+                    Double.TryParse(((ComboBoxItem)RPE_combo.SelectedItem).Content.ToString(), out RPE);
+                    exercise.RPE = RPE;
+                }
+                else if (protocol == "extra")
+                {
+                    exercise.protocol = "extra";
+                    exercise.name = name_box.Text;
+                }
+                else if (protocol == "basic")
+                {
+                    exercise.protocol = "blank";
+
+                    int sets;
+                    Int32.TryParse(((ComboBoxItem)sets_combo.SelectedItem).Content.ToString(), out sets);
+                    exercise.sets = sets;
+
+                    int reps;
+                    if (!Int32.TryParse(reps_box.Text, out reps))
+                    {
+                        return;
+                    }
+                    exercise.reps = reps;
                 }
                 else
                 {
-                    exercise.protocol = "ldg";
-                }
-
-                int reps;
-                if (!Int32.TryParse(reps_box.Text, out reps))
-                {
                     return;
                 }
-                exercise.reps = reps;
-
-                double RPE;
-                Double.TryParse(((ComboBoxItem)RPE_combo.SelectedItem).Content.ToString(), out RPE);
-                exercise.RPE = RPE;
-
-                int fatique;
-                Int32.TryParse(((ComboBoxItem)fatique_combo.SelectedItem).Content.ToString().Substring(0, 1), out fatique);
-                exercise.fatique = fatique;
             }
-            else if (protocol == "basic, RPE")
-            {
-                exercise.protocol = "sets";
-
-                int sets;
-                Int32.TryParse(((ComboBoxItem)sets_combo.SelectedItem).Content.ToString(), out sets);
-                exercise.sets = sets;
-
-                int reps;
-                if (!Int32.TryParse(reps_box.Text, out reps))
-                {
-                    return;
-                }
-                exercise.reps = reps;
-
-                double RPE;
-                Double.TryParse(((ComboBoxItem)RPE_combo.SelectedItem).Content.ToString(), out RPE);
-                exercise.RPE = RPE;
-            }
-            else if (protocol == "extra")
-            {
-                exercise.protocol = "extra";
-                exercise.name = name_box.Text;
-            }
-            else if (protocol == "basic")
-            {
-                exercise.protocol = "blank";
-
-                int sets;
-                Int32.TryParse(((ComboBoxItem)sets_combo.SelectedItem).Content.ToString(), out sets);
-                exercise.sets = sets;
-
-                int reps;
-                if (!Int32.TryParse(reps_box.Text, out reps))
-                {
-                    return;
-                }
-                exercise.reps = reps;
-            }
-            else
+            catch
             {
                 return;
             }

@@ -274,9 +274,11 @@ namespace workoutmakerCsharp
     {
         private string block_type;
         private List<TrainingWeek> training_weeks;
+        private string template_path;
 
         public TrainingBlock(string block_type, int week_count, string template_path, MainWorkouts main_workouts)
         {
+            this.template_path = template_path;
             this.training_weeks = new List<TrainingWeek>();
             List<int> starting_fatique = new List<int>(); starting_fatique.Add(24); starting_fatique.Add(40); starting_fatique.Add(56);
             List<int> available_fatiques = new List<int>(); available_fatiques.Add(24); available_fatiques.Add(40); available_fatiques.Add(56); available_fatiques.Add(72);
@@ -295,6 +297,7 @@ namespace workoutmakerCsharp
             training_weeks = new List<TrainingWeek>();
         }
 
+        public string GetTemplatePath() => this.template_path;
         public void AddTrainingWeek(TrainingWeek training_week) => this.training_weeks.Add(training_week);
         public void SetBlockType(string block_type) => this.block_type = block_type;
         public List<TrainingWeek> GetTrainingWeeks() => training_weeks;

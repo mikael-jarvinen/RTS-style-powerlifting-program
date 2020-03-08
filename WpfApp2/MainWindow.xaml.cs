@@ -34,6 +34,18 @@ namespace WpfApp2
             string current_file_path = "";
         }
 
+        private void AddWeek(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            TrainingBlock training_block = (TrainingBlock)button.Tag;
+
+            AddWeek window = new AddWeek(training_block);
+            window.ShowDialog();
+
+
+            UpdateProgramView();
+        }
+
         public void UpdateProgramView()
         {
             block_scroll_view.Children.Clear();
@@ -58,6 +70,7 @@ namespace WpfApp2
                     WrapPanel days_panel = new WrapPanel();
                     text_and_block.Children.Add(week_number);
                     text_and_block.Children.Add(days_panel);
+                    
                     foreach (TrainingDay day in week.GetTrainingDays())
                     {
                         StackPanel exercises_panel = new StackPanel(); exercises_panel.Margin = new Thickness(10.0);
@@ -96,6 +109,9 @@ namespace WpfApp2
                     }
                     week_count++;
                 }
+                Button add_week_button = new Button();
+                text_and_block.Children.Add(add_week_button);
+                add_week_button.Tag = block; add_week_button.Content = "Add Week"; add_week_button.Width = 60; add_week_button.Height = 20; add_week_button.HorizontalAlignment = HorizontalAlignment.Left; add_week_button.Click += AddWeek;
             }
         }
 
