@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using workoutmakerCsharp;
 
 namespace WpfApp2
@@ -32,7 +23,6 @@ namespace WpfApp2
             try
             {
                 exercise exercise = new exercise(name_box.Text);
-                exercises.Add(exercise);
                 string protocol = ((ComboBoxItem)protocol_combo.SelectedItem).Content.ToString();
                 exercise.name = name_box.Text;
                 if (protocol == "fatique")
@@ -105,6 +95,7 @@ namespace WpfApp2
                 {
                     return;
                 }
+                exercises.Add(exercise);
             }
             catch
             {

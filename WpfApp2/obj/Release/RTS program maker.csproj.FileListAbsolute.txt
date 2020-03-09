@@ -1,0 +1,33 @@
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\bin\Release\RTS_program_maker.exe.config
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\bin\Release\RTS_program_maker.exe
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\bin\Release\EPPlus.dll
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\bin\Release\EPPlus.xml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS program maker.csprojAssemblyReference.cache
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\AddExercise.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\AddWeek.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\EditExercise.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\edit_exercises.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\ExerciseEdit.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\GearButton.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\MainWindow.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\variables_window.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\weekly_template.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\XButton.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\App.g.cs
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS_program_maker_MarkupCompile.cache
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS_program_maker_MarkupCompile.lref
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\AddExercise.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\AddWeek.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\EditExercise.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\edit_exercises.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\ExerciseEdit.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\GearButton.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\MainWindow.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\variables_window.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\weekly_template.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\XButton.baml
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS_program_maker.g.resources
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS_program_maker.Properties.Resources.resources
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS program maker.csproj.GenerateResource.cache
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS program maker.csproj.CopyComplete
+C:\Users\mikko\source\repos\WpfApp2\WpfApp2\obj\Release\RTS_program_maker.exe

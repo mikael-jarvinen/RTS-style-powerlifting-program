@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:WpfApp2"
              mc:Ignorable="d" 
              d:DesignHeight="15" d:DesignWidth="20">
+    <UserControl.Resources>
+        <BitmapImage x:Key="ImageSource1" >X.png</BitmapImage>
+    </UserControl.Resources>
     <Button Name="btn" Width="20" Height="15">
-        <Image Source="X.png"></Image>
+        <Image Source="{DynamicResource ImageSource1}"></Image>
     </Button>
 </UserControl>

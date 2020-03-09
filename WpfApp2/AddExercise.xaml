@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="AddExercise" Height="100" Width="650" MinWidth="600"
+        Title="Add Exercise" Height="100" Width="650" MinWidth="600"
         Closing="CloseWindow">
     <Grid>
         <Grid.ColumnDefinitions>

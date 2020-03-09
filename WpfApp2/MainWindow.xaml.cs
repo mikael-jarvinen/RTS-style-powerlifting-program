@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using workoutmakerCsharp;
 using Microsoft.Win32;
 using OfficeOpenXml;
@@ -25,13 +14,11 @@ namespace WpfApp2
     public partial class MainWindow : Window
     {
         WorkoutMaker main_program;
-        string current_file_path;
 
         public MainWindow()
         {
             InitializeComponent();
             main_program = new WorkoutMaker();
-            string current_file_path = "";
         }
 
         private void AddWeek(object sender, RoutedEventArgs e)
@@ -48,6 +35,7 @@ namespace WpfApp2
 
         public void UpdateProgramView()
         {
+            block_scroll_view.Children.Clear();
             foreach (TrainingBlock block in main_program.GetTrainingBlocks())
             {
                 TextBlock block_type = new TextBlock();
@@ -150,7 +138,6 @@ namespace WpfApp2
             if (openFileDialog.ShowDialog() == openFileDialog.CheckFileExists)
             {
                 file_name.Text = openFileDialog.SafeFileName;
-                current_file_path = openFileDialog.FileName;
             }
             else
             {
@@ -175,7 +162,6 @@ namespace WpfApp2
             if(saveFileDialog.ShowDialog() == saveFileDialog.CheckPathExists)
             {
                 file_name.Text = saveFileDialog.SafeFileName;
-                current_file_path = saveFileDialog.FileName;
             }
             else
             {
